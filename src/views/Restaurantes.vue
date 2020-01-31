@@ -9,7 +9,7 @@
             <v-text-field type="text" v-model="search" class="capitalised" solo flat color="yellow" hide-details
               append-icon="mdi-magnify" placeholder="Pesquisa" single-line></v-text-field>
             <v-divider vertical inset class="mx-5"></v-divider>
-            <v-overflow-btn :items="organize" hide-details label="Organizar" v-model="organizedRestaurants" solo flat color="yellow lighten-3"></v-overflow-btn>
+            <v-overflow-btn :items="organize" item-text="name" hide-details label="Organizar" v-model="organizedRestaurants" solo flat color="yellow lighten-3"></v-overflow-btn>
             <v-divider vertical inset class="mx-5"></v-divider>
             <v-text-field color="yellow" hide-details solo flat append-icon="mdi-map-marker" placeholder="Localização"
               single-line></v-text-field>
@@ -20,8 +20,7 @@
           <v-col style="max-width: 25%; min-width: 25%; font-family:lato;">
             <div style="background-color: #F9FAFB; height:3530px; margin-bottom: 0px">
               <br />
-              <br />
-              <v-btn color="yellow accent-4" text @click="ola()">Boas putas</v-btn>
+              <br />             
               <v-card-text class="text-left"
                 style="font-weight: 700; font-family:lato; margin-left: 48%; font-size: 18px;">Filtros</v-card-text>
               <v-treeview v-model="tagged" selection-type="selectionType"
@@ -164,7 +163,7 @@
 
         organize: [{
             name: "A-Z",
-            function: ""
+            callback: () => this.restaurants.sort((a, b) => a.name - b.name )
           },
           {
             name: "Z-A",

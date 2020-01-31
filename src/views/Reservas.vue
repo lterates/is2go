@@ -327,7 +327,7 @@
       },
       submit() {
         if (this.$refs.form.validate()) {
-          this.dialog = false;
+          this.dialog = false;          
 
           this.$store.commit("ADD_RESERVATION", {
             reservationId: this.$store.getters.getLastReservationId,
@@ -339,7 +339,18 @@
             reservationDate: this.reservationDate,
             observations: this.observations,
             numPeople: this.numPeople,
+          }),
+          this.$store.commit("ADD_HISTORY", {
+            id: this.$store.getters.getLastHistoricId,
+            userId: this.$store.getters.getLoggedUserId,
+            pickedRestaurantName: this.pickedRestaurantName,
+            pickedDishName: this.pickedDishName,
+            reservationTime: this.reservationTime,
+            reservationDate: this.reservationDate,
+            numPeople: this.numPeople,
           });
+          this.$router.replace("/");
+          alert("Reserva feita!")
         }
       },
       reset() {

@@ -38,6 +38,7 @@ export default new Vuex.Store({
     loggedUser: [],
     reservations:[],
     existUser: false,
+    historic:[],
     // userlogged check
     logged: false
   },
@@ -72,6 +73,15 @@ export default new Vuex.Store({
     },
     getDishes: state => state.dishes,
 
+    getHistoric: state => state.historic,
+
+    getLastHistoricId:(state)=>{
+      if(state.historic.length){
+        return 1 + state.historic[state.historic.length-1].id;
+      }else{
+        return 0;
+      }
+    },    
 
 
   },
@@ -174,6 +184,19 @@ export default new Vuex.Store({
       })
 
       localStorage.setItem("reservations", JSON.stringify(state.reservations))
+    },
+    ADD_HISTORY(state,payload){
+      state.historic.push({
+        id: payload.id,
+        userId: payload.userId,
+        restaurantName: payload.pickedRestaurantName,
+        dishName: payload.pickedDishName,
+        reservationTime: payload.reservationTime,
+        reservationDate: payload.reservationDate,
+        numPeople: payload.numPeople
+      })
+      localStorage.setItem("historic", JSON.stringify(state.historic))
+      
     },
 
 
