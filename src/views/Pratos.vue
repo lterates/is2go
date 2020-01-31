@@ -23,14 +23,7 @@
               single-line
             ></v-text-field>
             <v-divider vertical inset class="mx-5"></v-divider>
-            <v-select
-              :items="organize"
-              hide-details
-              label="Organizar"
-              solo
-              flat
-              color="yellow lighten-3"
-            ></v-select>
+            <v-overflow-btn :items="organize" item-text="name" hide-details label="Organizar" v-model="organizedRestaurants" solo flat color="yellow lighten-3"></v-overflow-btn>
             <v-divider vertical inset class="mx-5"></v-divider>
             <v-text-field
               color="yellow"
@@ -140,12 +133,23 @@ export default {
       ],
       dishes: this.$store.getters.getDishes,
 
-      organize: [
-        { name: "A-Z", function: "" },
-        { name: "Z-A", function: "" },
-        { name: "Popularidade", function: "" },
-        { name: "Classificação", function: "" }
-      ]
+      organize: [{
+            name: "A-Z",
+            callback: () => this.dishes.sort((a, b) => a.name - b.name )
+          },
+          {
+            name: "Z-A",
+            function: ""
+          },
+          {
+            name: "Popularidade",
+            function: ""
+          },
+          {
+            name: "Classificação",
+            function: ""
+          }
+        ]
     };
   },
 
