@@ -10,7 +10,7 @@
       <v-spacer></v-spacer>
 
       <v-toolbar-items style="margin-left: 6%">
-        <router-link to="/reservas">
+        <router-link v-show="$store.getters.checkLogged === true" @click="reservas">
           <v-btn
             class="text-capitalize"
             style="font-family: lato; font-weight: 500;"
