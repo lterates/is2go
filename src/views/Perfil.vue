@@ -47,7 +47,7 @@
           </v-layout>
         </v-col>
       </v-card>
-      
+
       <!-- ################   Reservas  ###################### -->
       <v-card style=" margin-top: 3%; margin-left: 5%" width="90%" height="700px">
         <v-card-text
@@ -56,37 +56,37 @@
         <v-col style="margin-left: 5%; max-width: 90%; padding-bottom: 0px">
           <v-layout row wrap class="ma-6">
             <v-flex xs12 sm6 md4 lg4 v-for="reservation in historic" :key="reservation.id">
-              <v-card class="mx-auto ma-6" max-width="400">                
+              <v-card class="mx-auto ma-6" max-width="400">
 
                 <v-card-title
                   style="font-family:lato; font-weight: 500; font-size: 18px; margin-left: 3%; padding-bottom: 0;">
                   Restaurante: {{ reservation.restaurantName }}</v-card-title>
 
-                  <v-card-title
+                <v-card-title
                   style="font-family:lato; font-weight: 500; font-size: 18px; margin-left: 3%; padding-bottom: 0;">
                   Prato: {{ reservation.dishName }}</v-card-title>
 
-                  <v-card-title
+                <v-card-title
                   style="font-family:lato; font-weight: 500; font-size: 18px; margin-left: 3%; padding-bottom: 0;">
                   Hora da reserva: {{ reservation.reservationTime }}</v-card-title>
 
-                  <v-card-title
+                <v-card-title
                   style="font-family:lato; font-weight: 500; font-size: 18px; margin-left: 3%; padding-bottom: 0;">
                   Data da reserva: {{ reservation.reservationDate }}</v-card-title>
 
-                  <v-card-title
+                <v-card-title
                   style="font-family:lato; font-weight: 500; font-size: 18px; margin-left: 3%; padding-bottom: 0;">
                   Número de pessoas: {{ reservation.numPeople }}</v-card-title>
 
                 <v-divider class="mx-4"></v-divider>
-              
+
               </v-card>
-              
+
             </v-flex>
           </v-layout>
         </v-col>
       </v-card>
-     
+
     </v-row>
   </div>
 
@@ -96,7 +96,32 @@
   export default {
     name: "Perfil",
     components: {},
-
+    /*
+        data() {
+          
+          return {
+            dishes: [{
+                name: "Arroz de Pato à Antiga",
+                image: require('@/assets/pato.jpg'),
+                info: "Um prato clássico composto por arroz solto, pato desfiado e um sabor que brilha pela simplicidade.",
+                tags: "#tradicional"
+              },
+              {
+                name: "Arroz de Tamboril com Camarão",
+                image: require('@/assets/tamboril.jpg'),
+                info: "Um prato que encanta. Suculento como se quer, saboroso e fresco, graças aos coentros e à hortelã, este arroz de tamboril vai deliciá-lo.",
+                tags: "#peixe"
+              },
+              {
+                name: "Arroz de Tomate com Tofu",
+                image: require('@/assets/arroz de tomate.jpg'),
+                info: "Simples, saudável e delicioso. Direto da panela para o coração.",
+                tags: "#vegan #vegetariano #saudável"
+              },
+            ],
+            historic: this.$store.getters.getHistoric,
+          }
+          */
     data() {
       return {
         dishes: [{
@@ -106,20 +131,20 @@
             tags: "#tradicional"
           },
           {
+            name: "Codorniz à Valenciana",
+            image: require('@/assets/codorniz.jpg'),
+            info: "Uma twist orginal num prato tão conhecido do nosso país vizinho.",
+            tags: "Internacional"
+          },
+          {
             name: "Arroz de Tamboril com Camarão",
             image: require('@/assets/tamboril.jpg'),
             info: "Um prato que encanta. Suculento como se quer, saboroso e fresco, graças aos coentros e à hortelã, este arroz de tamboril vai deliciá-lo.",
             tags: "#peixe"
           },
-          {
-            name: "Arroz de Tomate com Tofu",
-            image: require('@/assets/arroz de tomate.jpg'),
-            info: "Simples, saudável e delicioso. Direto da panela para o coração.",
-            tags: "#vegan #vegetariano #saudável"
-          },
         ],
         historic: this.$store.getters.getHistoric,
       }
     }
-  };
+  }
 </script>
