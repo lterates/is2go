@@ -1,0 +1,6 @@
+<v-img
+  :src="require('../assets/is2go.png')"
+  class="my-3"
+  contain
+  height="40"
+></v-img>
