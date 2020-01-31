@@ -58,8 +58,8 @@ data() {
   return{
   dishes: [
         { name: "Arroz de Pato à Antiga", image: require('@/assets/pato.jpg'), info: "Um prato clássico composto por arroz solto, pato desfiado e um sabor que brilha pela simplicidade.", tags: "#tradicional" },
+        { name: "Codorniz à Valenciana", image: require('@/assets/codorniz.jpg'), info: "Uma twist orginal num prato tão conhecido do nosso país vizinho.", tags: "Internacional" },
         { name: "Arroz de Tamboril com Camarão", image: require('@/assets/tamboril.jpg'), info: "Um prato que encanta. Suculento como se quer, saboroso e fresco, graças aos coentros e à hortelã, este arroz de tamboril vai deliciá-lo.", tags: "#peixe" },
-        { name: "Arroz de Tomate com Tofu", image: require('@/assets/arroz de tomate.jpg'), info: "Simples, saudável e delicioso. Direto da panela para o coração.", tags: "#vegan #vegetariano #saudável" },
       ],
     }
   }
