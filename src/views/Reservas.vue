@@ -339,16 +339,7 @@
             reservationDate: this.reservationDate,
             observations: this.observations,
             numPeople: this.numPeople,
-          }),
-          this.$store.commit("ADD_HISTORY",{
-              id: this.$store.getters.getLastHistoricId,
-              userId: this.$store.getters.getLoggedUserId,
-              restaurantName: this.pickedRestaurantName,
-              reservationTime: this.reservationTime,
-              pickedDish: this.pickedDishName,
-              reservationDate: this.reservationDate,
-              numPeople: this.numPeople
-            });
+          });
         }
       },
       reset() {

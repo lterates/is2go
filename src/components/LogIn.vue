@@ -58,7 +58,7 @@ export default {
   data: () => ({
     username: "",
     password: "",
-    dialog1: false,
+    dialog1: false
   }),
 
   methods: {
@@ -72,7 +72,7 @@ export default {
           password: this.password
         });
         if (this.$store.getters.checkLogged === true) {
-          this.$router.push({ path: "/" })
+          this.$router.push({ path: "/homeLogged" });
         }
       }
     },

@@ -38,7 +38,6 @@ export default new Vuex.Store({
     loggedUser: [],
     reservations:[],
     existUser: false,
-    historic: [],
     // userlogged check
     logged: false
   },
@@ -56,14 +55,6 @@ export default new Vuex.Store({
     userInfo: state => state.users,
     getLoggedUserName: state => state.loggedUser.username,
     getLoggedUserId: state => state.loggedUser.id,
-    getHistoric: state => state.historic,
-    getLastHistoricId:(state)=>{
-      if(state.historic.length){
-        return 1 + state.historic[state.historic.length-1].id;
-      }else{
-        return 0;
-      }
-    },
 
     // ################# RESTAURANTES #################
    
@@ -78,17 +69,6 @@ export default new Vuex.Store({
       } else {
         return 0;
       }
-    },
-    getRestaurantsById: (state) =>{
-      return state.restaurants.sort(function(a,b){
-        const idA = a.id
-        const idB = b.id
-    
-        if(idA>idB) return 1;
-        if(idB>idA) return -1;
-
-        return 0
-      })
     },
     getDishes: state => state.dishes,
 
@@ -123,7 +103,6 @@ export default new Vuex.Store({
       if (sessionStorage.getItem("loggedUser")) {
         state.loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"));
         state.logged = true;
-        this.snackbar = true;
       } else {
         state.logged = false;
       }
@@ -196,19 +175,6 @@ export default new Vuex.Store({
 
       localStorage.setItem("reservations", JSON.stringify(state.reservations))
     },
-    ADD_HISTORY(state,payload){
-      state.historic.push({
-        id: payload.id,
-        userId: payload.userId,
-        restaurantName: payload.restaurantName,
-        dish: payload.pickedDish,
-        reservationTime: payload.reservationTime,
-        reservationDate: payload.reservationDate,
-        numPeople: payload.numPeople
-      })
-      localStorage.setItem("historic", JSON.stringify(state.historic))
-      
-    },
 
 
     ADD_USER(state, payload) {
@@ -254,7 +220,6 @@ export default new Vuex.Store({
             JSON.stringify(state.loggedUser)
           );
           alert("LOGIN");
-          this.snackbar = true;
 
           state.existUser = true;
 

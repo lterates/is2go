@@ -20,7 +20,8 @@
           <v-col style="max-width: 25%; min-width: 25%; font-family:lato;">
             <div style="background-color: #F9FAFB; height:3530px; margin-bottom: 0px">
               <br />
-              <br />              
+              <br />
+              <v-btn color="yellow accent-4" text @click="ola()">Boas putas</v-btn>
               <v-card-text class="text-left"
                 style="font-weight: 700; font-family:lato; margin-left: 48%; font-size: 18px;">Filtros</v-card-text>
               <v-treeview v-model="tagged" selection-type="selectionType"
@@ -160,10 +161,10 @@
         ],
 
         restaurants: this.$store.getters.getRestaurants,
-          organize: ["Ola","Adeus","Até já"],
-       /* organize: [{
+
+        organize: [{
             name: "A-Z",
-            function: "this.restaurants.name.sort((a,b) => (a.name > b.name ) ? 1 : -1)"
+            function: ""
           },
           {
             name: "Z-A",
@@ -178,7 +179,6 @@
             function: ""
           }
         ]
-        */
       };
     },
 

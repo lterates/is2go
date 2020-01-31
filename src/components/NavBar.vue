@@ -52,9 +52,6 @@
       <LogIn/>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ MODAL REGISTO ~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <Register/>
-      <v-snackbar v-model="snackbar" :timeout="4000" top color="success">
-        Terminou a sessão
-      </v-snackbar>
     </v-app-bar>
   </v-app>
 </template>
@@ -69,9 +66,7 @@ export default {
     LogIn,
     Register
   },
-  data: () => ({
-    snackbar: false,
-  }),
+  data: () => ({}),
 
   methods: {
     userProfile() {
@@ -81,9 +76,8 @@ export default {
         this.$store.commit("LOGOUT");
         sessionStorage.removeItem("loggedUser");
         this.$router.replace('/');        
-        this.snackbar = true;
-      },
-    },
+      }    
+  }
 };
 </script>
 
