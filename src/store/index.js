@@ -62,6 +62,7 @@ export default new Vuex.Store({
     },
     userInfo: state => state.users,
     getLoggedUserName: state => state.loggedUser.username,
+    checkAdmin: state => state.loggedUser.admin,
     getLoggedUserId: state => state.loggedUser.id,
 
     // ################# RESTAURANTES #################

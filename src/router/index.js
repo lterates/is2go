@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Pratos from "../views/Pratos.vue";
 import Reservas from "../views/Reservas.vue";
+import Office from "../views/Office.vue";
 import HomeLogged from "../views/HomeLogged.vue";
 import Perfil from "../views/Perfil.vue"
 Vue.use(VueRouter);
@@ -17,6 +18,11 @@ const routes = [
     path: "/reservas",
     name: "reservas",
     component: Reservas,    
+  },
+  {
+    path: "/office",
+    name: "office",
+    component: Office,    
   },
   {
     path: "/restaurantes",

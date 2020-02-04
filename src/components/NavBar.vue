@@ -37,6 +37,15 @@
             text
           >Pratos</v-btn>
         </router-link>
+        <router-link to="/office">
+          <v-btn
+            v-show="$store.getters.checkLogged === true"
+            class="text-capitalize"
+            style="font-family: lato; font-weight: 500;"
+            height="80"
+            text
+          >Administração</v-btn>
+        </router-link>
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-icon v-show="$store.getters.checkLogged === true"
