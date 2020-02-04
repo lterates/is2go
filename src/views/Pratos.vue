@@ -97,7 +97,7 @@
 
                   <v-card-actions>
                     <router-link to="/reservas">
-                      <v-btn color="yellow accent-4" text @click="reserve"
+                      <v-btn style="margin-left: 100%" color="black" outlined text @click="reserve"
                         >Reservar</v-btn
                       ></router-link
                     >

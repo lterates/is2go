@@ -26,9 +26,7 @@
           <v-btn icon>
             <v-icon>mdi-crosshairs-gps</v-icon>
           </v-btn>
-
-          <router-link to="/pratos">
-          <v-text-field hide-details color="yellow" append-icon="mdi-magnify" placeholder="Encontre o seu prato..." solo flat single-line></v-text-field></router-link>
+          <v-text-field hide-details color="yellow" append-icon="mdi-magnify" placeholder="Encontre o seu prato..." solo flat single-line></v-text-field>
           <v-btn rounded outlined small style="margin-left: 1%; font-weight: 300" color="grey">Populares</v-btn>
           <v-btn style="margin-left: 1%; font-weight: 300" rounded outlined small color="grey">Destaques</v-btn>
           <v-btn style="margin-left: 1%; font-weight: 300" rounded outlined small color="grey">Fast Food</v-btn>

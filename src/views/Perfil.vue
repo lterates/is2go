@@ -3,13 +3,13 @@
     <v-row>
       <v-col class="pa-0" style="margin-left:6%; max-width:15%;">
         <v-image>
-          <v-img style="margin-top: 19%" height="300" :src="require('@/assets/tiago.jpg')"></v-img>
+          <v-img style="margin-top: 19%" height="300" :src="require('@/assets/account.png')"></v-img>
         </v-image>
       </v-col>
       <v-col class="pa-0" style="max-width:73%;">
         <v-card outlined style="margin-left:3%; margin-top: 4%" height="300px">
           <v-card-text
-            style="margin-top: 10%; text-align:left; font-weight: 700; color: black; font-size: 200%; margin-left: 10%">
+            style="margin-top: 10%; text-align:left; font-family: lato ;font-weight: 700; color: black; font-size: 150%; margin-left: 10%">
             Olá {{ $store.getters.getLoggedUserName }}!</v-card-text>
         </v-card>
       </v-col>
