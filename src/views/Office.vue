@@ -9,10 +9,51 @@
             <v-card class="mb-12" flat color="white" height="340px" style="font-family: lato;">
                 <v-row>
                     <v-col class="text-center">
-                        <v-btn depressed color="white" height="170px" width="99%" x-large>
-                            <v-icon x-large>mdi-account-check</v-icon>
-                            <v-card-subtitle>Gerir Contas</v-card-subtitle>
-                        </v-btn>
+                        <v-dialog
+                            v-model="dialogDish"
+                            width="500">
+                            <template v-slot:activator="{ on }">
+                              <v-btn depressed v-on="on" color="white" height="170px" width="99%" x-large>
+                                  <v-icon x-large>mdi-account-check</v-icon>
+                                  <v-card-subtitle>Gerir Contas</v-card-subtitle>
+                              </v-btn>
+                            </template>
+                            <v-card >
+                              <v-form>
+                                  <v-card-subtitle class="ma-4" style="font-weight: 500; font-size: 22px; text-align: center">Novo Prato</v-card-subtitle>
+                                  <v-text-field class="mx-auto" style="max-width:80%;"
+                                      outlined
+                                      color="yellow darken-1"
+                                      label="Nome"
+                                      required
+                                      v-model="dishName"
+                                  ></v-text-field>
+                                  <v-text-field class="mx-auto" style="max-width:80%;"
+                                      color="yellow darken-1"
+                                      outlined
+                                      label="Tags"
+                                      required
+                                      v-model="dishTags"
+                                  ></v-text-field>
+                                  <v-text-field class="mx-auto" style="max-width:80%;"
+                                      color="yellow darken-1"
+                                      outlined
+                                      label="Descrição"
+                                      required
+                                      v-model="dishDesc"
+                                  ></v-text-field>  
+                                  <v-file-input class="mx-auto mb-6" accept="image/*" prepend-icon="mdi-image-outline" style="max-width: 80%" color="yellow darken-1" label="Imagem do Prato"></v-file-input>
+                              </v-form>
+                              <v-divider></v-divider>
+                              <v-card-actions>
+                                <v-btn
+                                  color="#FFE138" class="mx-auto ma-4" style="font-weight: 700; font-family:lato"
+                                  @click="dialogDish = false">
+                                  Adicionar Novo Prato
+                                </v-btn>
+                              </v-card-actions>
+                            </v-card>
+                        </v-dialog>
                     </v-col>
                     <v-divider vertical></v-divider>
                     <v-col class="text-center">
@@ -54,36 +95,10 @@
                 </v-row>
             </v-card>
         </v-card>
-        <v-card v-if="addDish = true" raised color="white" height="auto" max-width="58%" style="font-family: lato; margin-top:3%; margin-left: 20%" class="text-center">
-            <v-form>
-                <v-card-subtitle style="font-weight: 500; font-size: 22px">Novo Prato</v-card-subtitle>
-                <v-text-field class="mx-auto" style="max-width:80%;"
-                    outlined
-                    color="yellow darken-1"
-                    label="Nome"
-                    required
-                    v-model="dishName"
-                ></v-text-field>
-                <v-text-field class="mx-auto" style="max-width:80%;"
-                    color="yellow darken-1"
-                    outlined
-                    label="Tags"
-                    required
-                    v-model="dishTags"
-                ></v-text-field>
-                <v-text-field class="mx-auto" style="max-width:80%;"
-                    color="yellow darken-1"
-                    outlined
-                    label="Descrição"
-                    required
-                    v-model="dishDesc"
-                ></v-text-field>  
-                <v-file-input class="mx-auto" accept="image/*" prepend-icon="mdi-image-outline" style="max-width: 80%" color="yellow darken-1" label="Imagem do Prato"></v-file-input>
-                <v-btn color="#FFE138" class="mb-6 mt-4" style="font-weight: 700; font-family:lato" @click="submit">Adicionar Novo Prato</v-btn>
-            </v-form>
-        </v-card>
+        
+        
         <!-- Botão de Cancelar o Pedido -->
-        <v-dialog v-model="dialog" width="300">
+        <v-dialog v-model="dialogQuit" width="300">
             <template v-slot:activator="{ on }">
             <v-btn class="mb-2" outlined style="margin-left: 41%;font-weight: 500; font-family:lato; margin-top: 3%" color="black" max-width="300px"
                 v-on="on">Voltar à página de Início</v-btn>
@@ -96,7 +111,7 @@
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <router-link to="/"><v-btn text>Sim</v-btn></router-link>
-                <v-btn text @click="dialog = false">Não</v-btn>
+                <v-btn text @click="dialogQuit = false">Não</v-btn>
             </v-card-actions>
             </v-card>
         </v-dialog>
@@ -107,10 +122,10 @@
 export default {
     name: 'Office',
     counter: 0,
-    addDish: false,
     data() {
         return {
-            dialog: false,
+            dialogQuit: false,
+            dialogDish: false,
             dishName: '',
             dishTags: '',
             dishDesc: '',

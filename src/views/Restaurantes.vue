@@ -24,7 +24,15 @@
               single-line
             ></v-text-field>
             <v-divider vertical inset class="mx-5"></v-divider>
-            <v-overflow-btn :items="organize" item-text="name" hide-details label="Organizar" v-model="organizedRestaurants" solo flat color="yellow lighten-3"></v-overflow-btn>
+            <v-overflow-btn 
+              :items="organize" 
+              item-text="name" 
+              hide-details 
+              label="Organizar"
+              v-model="organizedRestaurants" 
+              flat 
+              solo
+              color="yellow lighten-3"></v-overflow-btn>
             <v-divider vertical inset class="mx-5"></v-divider>
             <v-text-field
               color="yellow"
