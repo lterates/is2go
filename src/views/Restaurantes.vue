@@ -2,7 +2,7 @@
   <v-app class="restaurantes">
     <v-layout text-center>
       <v-card width="100%">
-        <!-- ~~~~~~~~~~~~~~~~~ SEARCH ~~~~~~~~~~~~~~~~ -->
+        <!-- ~~~~~~~~~~~~~~~~~ BAR ~~~~~~~~~~~~~~~~ -->
         <v-card id="search" flat color="transparent">
           <v-toolbar
             style="font-size:1vw; margin: auto; margin-top:2%;"

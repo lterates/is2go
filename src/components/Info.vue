@@ -20,10 +20,10 @@
         <v-icon>mdi-twitter</v-icon>
       </v-btn>
       <v-btn icon>
-        <v-icon>mdi-facebook-box</v-icon>
+        <v-icon>mdi-facebook</v-icon>
       </v-btn>
       <v-btn icon>
-        <v-icon>mdi-linkedin-box</v-icon>
+        <v-icon>mdi-linkedin</v-icon>
       </v-btn>
       <v-btn icon style="margin-right:1%">
         <v-icon>mdi-youtube</v-icon>
