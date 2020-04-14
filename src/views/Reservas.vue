@@ -271,6 +271,7 @@
           <v-dialog v-model="dialog" width="300">
             <template v-slot:activator="{ on }">
               <v-btn color="#FFE138" class="ml-4 mb-2" style="font-weight: 700; font-family:lato" @click="submit">Confirmar a Reserva</v-btn>
+               <!-- Botão de Cancelar o Pedido -->
               <v-btn class="mb-2" outlined style="margin-left: 32%;font-weight: 500; font-family:lato" color="black"
                 v-on="on">Cancelar a Reserva</v-btn>
             </template>

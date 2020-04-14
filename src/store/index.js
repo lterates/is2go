@@ -7,45 +7,283 @@ export default new Vuex.Store({
   state: {
     users: [],
     comments: [],
-    restaurants: [
-      { id: 0, name: "Casa Nanda", photo:require('@/assets/nanda.jpg'), desc:"Espaço caseiro com atendimento acolhedor e familiar.", address:"Rua da Alegria, 394, Porto", contacts:"22 5370575", times:"", rating: 3.9, tags: "Tradicional" },
-      { id: 1, name: "Chimarrão Norteshopping", photo: require('@/assets/chimarrão.jpg'), desc:"A verdadeira tentação da carne.", address:"Norteshopping, Sra. da Hora", contacts:"21 0026651", times:"", rating: 3.9, tags: "#carne" },
-      { id: 2, name: "Essência", photo:require('@/assets/essencia.jpg'), desc:"O restaurante Essência propõe, mais do que simples pratos saudáveis, apresentar verdadeiras iguarias.", address:"R. de Pedro Hispano 1196, Porto", contacts:"22 8301813", times:"", rating: 4.5, tags: "#esplanada #vegetariano #sobremesas #saudável" },
-      { id: 3, name: "Adega São Nicolau", photo:require('@/assets/nicolau.jpg'), desc:"Casa típica, localizada na Ribeira, onde primam os pratos da cozinha tradicional portuguesa.", address:"R. de São Nicolau 1, Porto", contacts:"22 2008232", times:"", rating: 4.3, tags: "#mediterrâneo #tradicional" },
-      { id: 4, name: "McDonald's Aliados", photo:require('@/assets/mac.jpg'), desc:"O restaurante está localizado no espaço anteriormente ocupado pelo famoso Café Imperial, aberto na cidade nos anos 1930.", address:"Praça da Liberdade 126, Porto", contacts:"22 2013248", times:"", rating: 4.2, tags: "#fastfood" },
-      { id: 5, name: "O Buraco", photo:require('@/assets/buraco.jpg'), desc:"Uma refeição aqui é assim um verdadeiro ato de prazer e a empatia conseguida, excelentemente situada, junto a um dos rios mais bonitos do país.", address:"Rua do Bolhão 95, Porto", contacts:"22 2006717", times:"", rating: 4.3, tags: "#tradicional #informal" },
-      { id: 6, name: "Puro 4050", photo:require('@/assets/puro4050.jpg'), desc:"Comida italiana e mediterrânica, com um ingrediente especial como elemento central: a eclética carta.", address:"Largo São Domingos 84, Porto ", contacts:"22 2011852", times:"", rating: 4.7, tags: "#vegan #vegetariano #italiano" },
-      { id: 7, name: "Semea by Euskalduna", photo:require('@/assets/semea.jpg'), desc:"Todos nós temos memórias especiais criadas à mesa com aqueles que nos são mais queridos e estarão sempre ligados à gastronomia. O Semea tem por base a partilha", address:"Rua das Flores, 179 Porto", contacts:"938 566 766", times:"", rating: 4.2, tags: "#vegetariano #saudável #familiar" },
-      { id: 8, name: "Early Cedofeita", photo:require('@/assets/earlycedofeita.jpg'), desc:"O ambiente é acolhedor, com decoração moderna e minimalista, com toques vintage aqui e ali. A carta também não é dada a grandes floreados. É simples, boa e eficaz.", address:"Rua dos Bragas, 374 Porto", contacts:"22 1124203", times:"", rating: 4.5, tags: "#brunch #coffee" },
-      { id: 9, name: "MUU", photo:require('@/assets/muu.jpg') , desc:"Pela vida. Pelo que fazem. Por cada pessoa que recebem. Atentos a cada detalhe e apaixonados por cada chance de criar memórias diáriamente.", address:"Rua do Almada, 149A, Porto", contacts:"914 784 032", times:"", rating: 5.0, tags: "#carne #vinhos #vegetariano" },
-      { id: 10, name: "Brick Clérigos", photo:require('@/assets/brick.jpg'), desc:"O Brick alia o conceito de mesas comunitárias, com comida genuína, simples, saudável e muito saborosa. Simplesmente brilhante!", address:"Campo Mártires da Pátria, 103", contacts:"22 3234735", times:"", rating: 4.6, tags: "#brunch #vegetariano #informal #tradicional" },
-      { id: 11, name: "Typographia Progresso", photo:require('@/assets/typographiaprogresso.jpg'), desc:"A formidável atmosfera, carta original e staff amigável. Com um conceito novo e intrigante, viage o mundo com um toque portuense em cada prato.", address:"Rua do Dr. Sousa Viterbo, 89", contacts:"22 0997846", times:"", rating: 4.4, tags: "#vinhos #carne #esplanada" },
-      { id: 12, name: "O Apego", photo:require('@/assets/apego.jpg'), desc:"Cozinha fantástica. Sofisticação mas sem perder o sentido da genuinidade. Pessoas que amam o que fazem e cuidam muito bem dos outros. Tudo com carinho.", address:"Rua de Santa Catarina 1198", contacts:"22 4029984", times:"", rating: 4.8, tags: "#gourmet #carne #peixe" },
-      { id: 13, name: "Ikeda", photo:require('@/assets/ikeda.jpg'), desc:"A riqueza dos sabores, as diferentes texturas e as cores fortes são algumas das armas da gastronomia japonesa. O elogio da cozinha tradicional japonesa.", address:"Rua do Campo Alegre 416", contacts:"915 499 363", times:"", rating: 4.5, tags: "#japonês #peixe #vinhos #carne" },
-      { id: 14, name: "Cantinho do Avillez", photo:require('@/assets/cantinhodoavillez.jpg'), desc:"O Cantinho do Avillez no Porto é um espaço simpático, acolhedor e descontraído. A qualidade é uma prioridade. A cozinha é de inspiração portuguesa com influências de viagens.", address:"Rua Mouzinho da Silveira, 166", contacts:"22 3227879", times:"", rating: 4.3, tags: "#tradicional #carne #peixe #vegetariano" },
+    restaurants: [{
+        id: 0,
+        name: "Casa Nanda",
+        photo: require('@/assets/nanda.jpg'),
+        desc: "Espaço caseiro com atendimento acolhedor e familiar.",
+        address: "Rua da Alegria, 394, Porto",
+        contacts: "22 5370575",
+        times: "",
+        rating: 3.9,
+        tags: "Tradicional"
+      },
+      {
+        id: 1,
+        name: "Chimarrão Norteshopping",
+        photo: require('@/assets/chimarrão.jpg'),
+        desc: "A verdadeira tentação da carne.",
+        address: "Norteshopping, Sra. da Hora",
+        contacts: "21 0026651",
+        times: "",
+        rating: 3.9,
+        tags: "#carne"
+      },
+      {
+        id: 2,
+        name: "Essência",
+        photo: require('@/assets/essencia.jpg'),
+        desc: "O restaurante Essência propõe, mais do que simples pratos saudáveis, apresentar verdadeiras iguarias.",
+        address: "R. de Pedro Hispano 1196, Porto",
+        contacts: "22 8301813",
+        times: "",
+        rating: 4.5,
+        tags: "#esplanada #vegetariano #sobremesas #saudável"
+      },
+      {
+        id: 3,
+        name: "Adega São Nicolau",
+        photo: require('@/assets/nicolau.jpg'),
+        desc: "Casa típica, localizada na Ribeira, onde primam os pratos da cozinha tradicional portuguesa.",
+        address: "R. de São Nicolau 1, Porto",
+        contacts: "22 2008232",
+        times: "",
+        rating: 4.3,
+        tags: "#mediterrâneo #tradicional"
+      },
+      {
+        id: 4,
+        name: "McDonald's Aliados",
+        photo: require('@/assets/mac.jpg'),
+        desc: "O restaurante está localizado no espaço anteriormente ocupado pelo famoso Café Imperial, aberto na cidade nos anos 1930.",
+        address: "Praça da Liberdade 126, Porto",
+        contacts: "22 2013248",
+        times: "",
+        rating: 4.2,
+        tags: "#fastfood"
+      },
+      {
+        id: 5,
+        name: "O Buraco",
+        photo: require('@/assets/buraco.jpg'),
+        desc: "Uma refeição aqui é assim um verdadeiro ato de prazer e a empatia conseguida, excelentemente situada, junto a um dos rios mais bonitos do país.",
+        address: "Rua do Bolhão 95, Porto",
+        contacts: "22 2006717",
+        times: "",
+        rating: 4.3,
+        tags: "#tradicional #informal"
+      },
+      {
+        id: 6,
+        name: "Puro 4050",
+        photo: require('@/assets/puro4050.jpg'),
+        desc: "Comida italiana e mediterrânica, com um ingrediente especial como elemento central: a eclética carta.",
+        address: "Largo São Domingos 84, Porto ",
+        contacts: "22 2011852",
+        times: "",
+        rating: 4.7,
+        tags: "#vegan #vegetariano #italiano"
+      },
+      {
+        id: 7,
+        name: "Semea by Euskalduna",
+        photo: require('@/assets/semea.jpg'),
+        desc: "Todos nós temos memórias especiais criadas à mesa com aqueles que nos são mais queridos e estarão sempre ligados à gastronomia. O Semea tem por base a partilha",
+        address: "Rua das Flores, 179 Porto",
+        contacts: "938 566 766",
+        times: "",
+        rating: 4.2,
+        tags: "#vegetariano #saudável #familiar"
+      },
+      {
+        id: 8,
+        name: "Early Cedofeita",
+        photo: require('@/assets/earlycedofeita.jpg'),
+        desc: "O ambiente é acolhedor, com decoração moderna e minimalista, com toques vintage aqui e ali. A carta também não é dada a grandes floreados. É simples, boa e eficaz.",
+        address: "Rua dos Bragas, 374 Porto",
+        contacts: "22 1124203",
+        times: "",
+        rating: 4.5,
+        tags: "#brunch #coffee"
+      },
+      {
+        id: 9,
+        name: "MUU",
+        photo: require('@/assets/muu.jpg'),
+        desc: "Pela vida. Pelo que fazem. Por cada pessoa que recebem. Atentos a cada detalhe e apaixonados por cada chance de criar memórias diáriamente.",
+        address: "Rua do Almada, 149A, Porto",
+        contacts: "914 784 032",
+        times: "",
+        rating: 5.0,
+        tags: "#carne #vinhos #vegetariano"
+      },
+      {
+        id: 10,
+        name: "Brick Clérigos",
+        photo: require('@/assets/brick.jpg'),
+        desc: "O Brick alia o conceito de mesas comunitárias, com comida genuína, simples, saudável e muito saborosa. Simplesmente brilhante!",
+        address: "Campo Mártires da Pátria, 103",
+        contacts: "22 3234735",
+        times: "",
+        rating: 4.6,
+        tags: "#brunch #vegetariano #informal #tradicional"
+      },
+      {
+        id: 11,
+        name: "Typographia Progresso",
+        photo: require('@/assets/typographiaprogresso.jpg'),
+        desc: "A formidável atmosfera, carta original e staff amigável. Com um conceito novo e intrigante, viage o mundo com um toque portuense em cada prato.",
+        address: "Rua do Dr. Sousa Viterbo, 89",
+        contacts: "22 0997846",
+        times: "",
+        rating: 4.4,
+        tags: "#vinhos #carne #esplanada"
+      },
+      {
+        id: 12,
+        name: "O Apego",
+        photo: require('@/assets/apego.jpg'),
+        desc: "Cozinha fantástica. Sofisticação mas sem perder o sentido da genuinidade. Pessoas que amam o que fazem e cuidam muito bem dos outros. Tudo com carinho.",
+        address: "Rua de Santa Catarina 1198",
+        contacts: "22 4029984",
+        times: "",
+        rating: 4.8,
+        tags: "#gourmet #carne #peixe"
+      },
+      {
+        id: 13,
+        name: "Ikeda",
+        photo: require('@/assets/ikeda.jpg'),
+        desc: "A riqueza dos sabores, as diferentes texturas e as cores fortes são algumas das armas da gastronomia japonesa. O elogio da cozinha tradicional japonesa.",
+        address: "Rua do Campo Alegre 416",
+        contacts: "915 499 363",
+        times: "",
+        rating: 4.5,
+        tags: "#japonês #peixe #vinhos #carne"
+      },
+      {
+        id: 14,
+        name: "Cantinho do Avillez",
+        photo: require('@/assets/cantinhodoavillez.jpg'),
+        desc: "O Cantinho do Avillez no Porto é um espaço simpático, acolhedor e descontraído. A qualidade é uma prioridade. A cozinha é de inspiração portuguesa com influências de viagens.",
+        address: "Rua Mouzinho da Silveira, 166",
+        contacts: "22 3227879",
+        times: "",
+        rating: 4.3,
+        tags: "#tradicional #carne #peixe #vegetariano"
+      },
     ],
-    dishes: [
-      { id:0 ,name: "Arroz de Pato à Antiga", photo: require('@/assets/pato.jpg'), info: "Um prato clássico composto por arroz solto, pato desfiado e um sabor que brilha pela simplicidade.", tags: "#tradicional" },
-      { id:1, name: "Arroz de Tamboril com Camarão", photo: require('@/assets/tamboril.jpg'), info: "Um prato que encanta. Suculento como se quer, saboroso e fresco, graças aos coentros e à hortelã, este arroz de tamboril vai deliciá-lo.", tags: "#peixe" },
-      { id:2 ,name: "Arroz de Tomate com Tofu", photo: require('@/assets/arroz de tomate.jpg'), info: "Simples, saudável e delicioso. Direto da panela para o coração.", tags: "#vegan #vegetariano #saudável" },
-      { id:3, name: "Arroz à Valenciana", photo: require('@/assets/arroz-valenciana.jpg'), info: "O arroz à valenciana é um prato com origem na região de Valência. Rico na mistura de ingredientes e sabores que cozinham num só tacho.", tags: "#peixe" },
-      { id:4, name: "Arroz de Polvo", photo: require('@/assets/polvinho.jpg'), info: "Malandrinho, delicioso e reconfortante. Este é o prato que tanto procurava.", tags: "#peixe" },
-      { id:5, name: "Arroz Doce", photo: require('@/assets/arrozdoce.jpg'), info: "Doce das romarias e casamentos por todo o país, sempre polvilhado com canela. Um arroz-doce cremoso que sacia as memórias de qualquer um.", tags: "#sobremesas" },
-      { id:6, name: "Cozido à Portuguesa", photo: require('@/assets/cozido.jpg'), info: "Uma refeição tradicional portuguesa deliciosa para um almoço de domingo.", tags: "#tradicional #carne" },
-      { id:7, name: "Almofadinhas com alheira e legumes", photo: require('@/assets/almofadas.jpg'), info: "Perfeitas para uma refeição mais ligeira e acompanhadas de uma salada verde.", tags: "#carne #leve" },
-      { id:8, name: "Francesinha", photo: require('@/assets/francesinha.jpg'), info: "Tradicional do Porto, ideal com cerveja e boa companhia.", tags: "Tradicional" },
-      { id:9, name: "Brownies", photo: require('@/assets/brownies.jpg'), info: "Ideal para aconchegar o estômago numa tarde fria de inverno.", tags: "Sobremesa" },      
-      { id:10, name: "Bife Com Legumes Salteados", photo: require('@/assets/bife.jpg'), info: "Perfeito para almoços em familia, o nosso bife da casa será ao gosto de todas as gerações.", tags: "Carne" },
-      { id:11, name: "Cheeseburger", photo: require('@/assets/burgers.jpg'), info: "Clássico americano e internacionalmente aclamado, o nosso cheeserburger é uma delicia intemporal.", tags: "Fast Food" },
-      { id:12, name: "Risotto de Cogumelos", photo: require('@/assets/cogumelos.jpg'), info: "Tipicamente italiano, o nosso risotto de cogumelos aquecer-lhe-à o estômago e o coração.", tags: "Italiano" },
-      { id:13, name: "Caldeirada de Vegetais", photo: require('@/assets/beterraba.jpg'), info: "Quente e cheia de sabor, direta da nossa cozinha ao seu coração.", tags: "Vegan" },
-      { id:14, name: "Codorniz à Valenciana", photo: require('@/assets/codorniz.jpg'), info: "Uma twist orginal num prato tão conhecido do nosso país vizinho.", tags: "Internacional" },
+    dishes: [{
+        id: 0,
+        name: "Arroz de Pato à Antiga",
+        photo: require('@/assets/pato.jpg'),
+        info: "Um prato clássico composto por arroz solto, pato desfiado e um sabor que brilha pela simplicidade.",
+        tags: "#tradicional"
+      },
+      {
+        id: 1,
+        name: "Arroz de Tamboril com Camarão",
+        photo: require('@/assets/tamboril.jpg'),
+        info: "Um prato que encanta. Suculento como se quer, saboroso e fresco, graças aos coentros e à hortelã, este arroz de tamboril vai deliciá-lo.",
+        tags: "#peixe"
+      },
+      {
+        id: 2,
+        name: "Arroz de Tomate com Tofu",
+        photo: require('@/assets/arroz de tomate.jpg'),
+        info: "Simples, saudável e delicioso. Direto da panela para o coração.",
+        tags: "#vegan #vegetariano #saudável"
+      },
+      {
+        id: 3,
+        name: "Arroz à Valenciana",
+        photo: require('@/assets/arroz-valenciana.jpg'),
+        info: "O arroz à valenciana é um prato com origem na região de Valência. Rico na mistura de ingredientes e sabores que cozinham num só tacho.",
+        tags: "#peixe"
+      },
+      {
+        id: 4,
+        name: "Arroz de Polvo",
+        photo: require('@/assets/polvinho.jpg'),
+        info: "Malandrinho, delicioso e reconfortante. Este é o prato que tanto procurava.",
+        tags: "#peixe"
+      },
+      {
+        id: 5,
+        name: "Arroz Doce",
+        photo: require('@/assets/arrozdoce.jpg'),
+        info: "Doce das romarias e casamentos por todo o país, sempre polvilhado com canela. Um arroz-doce cremoso que sacia as memórias de qualquer um.",
+        tags: "#sobremesas"
+      },
+      {
+        id: 6,
+        name: "Cozido à Portuguesa",
+        photo: require('@/assets/cozido.jpg'),
+        info: "Uma refeição tradicional portuguesa deliciosa para um almoço de domingo.",
+        tags: "#tradicional #carne"
+      },
+      {
+        id: 7,
+        name: "Almofadinhas com alheira e legumes",
+        photo: require('@/assets/almofadas.jpg'),
+        info: "Perfeitas para uma refeição mais ligeira e acompanhadas de uma salada verde.",
+        tags: "#carne #leve"
+      },
+      {
+        id: 8,
+        name: "Francesinha",
+        photo: require('@/assets/francesinha.jpg'),
+        info: "Tradicional do Porto, ideal com cerveja e boa companhia.",
+        tags: "Tradicional"
+      },
+      {
+        id: 9,
+        name: "Brownies",
+        photo: require('@/assets/brownies.jpg'),
+        info: "Ideal para aconchegar o estômago numa tarde fria de inverno.",
+        tags: "Sobremesa"
+      },
+      {
+        id: 10,
+        name: "Bife Com Legumes Salteados",
+        photo: require('@/assets/bife.jpg'),
+        info: "Perfeito para almoços em familia, o nosso bife da casa será ao gosto de todas as gerações.",
+        tags: "Carne"
+      },
+      {
+        id: 11,
+        name: "Cheeseburger",
+        photo: require('@/assets/burgers.jpg'),
+        info: "Clássico americano e internacionalmente aclamado, o nosso cheeserburger é uma delicia intemporal.",
+        tags: "Fast Food"
+      },
+      {
+        id: 12,
+        name: "Risotto de Cogumelos",
+        photo: require('@/assets/cogumelos.jpg'),
+        info: "Tipicamente italiano, o nosso risotto de cogumelos aquecer-lhe-à o estômago e o coração.",
+        tags: "Italiano"
+      },
+      {
+        id: 13,
+        name: "Caldeirada de Vegetais",
+        photo: require('@/assets/beterraba.jpg'),
+        info: "Quente e cheia de sabor, direta da nossa cozinha ao seu coração.",
+        tags: "Vegan"
+      },
+      {
+        id: 14,
+        name: "Codorniz à Valenciana",
+        photo: require('@/assets/codorniz.jpg'),
+        info: "Uma twist orginal num prato tão conhecido do nosso país vizinho.",
+        tags: "Internacional"
+      },
 
     ],
     loggedUser: [],
-    reservations:[],
+    reservations: [],
     existUser: false,
-    historic:[],
+    historic: [],
     // userlogged check
     logged: false
   },
@@ -60,17 +298,24 @@ export default new Vuex.Store({
         return 0;
       }
     },
+    getLastDishId: (state) => {
+      if (state.dishes.length) {
+        return 1 + state.dishes[state.dishes.length - 1].id;
+      } else {
+        return 0;
+      }
+    },
     userInfo: state => state.users,
     getLoggedUserName: state => state.loggedUser.username,
     checkAdmin: state => state.loggedUser.admin,
     getLoggedUserId: state => state.loggedUser.id,
 
     // ################# RESTAURANTES #################
-   
+
     restaurantInfo: state => id => {
-      return state.restaurants.find(restaurant => restaurant.id === id);     
+      return state.restaurants.find(restaurant => restaurant.id === id);
     },
-    
+
     getRestaurants: state => state.restaurants,
     getLastRestaurantId: (state) => {
       if (state.restaurants.length) {
@@ -83,13 +328,13 @@ export default new Vuex.Store({
 
     getHistoric: state => state.historic,
 
-    getLastHistoricId:(state)=>{
-      if(state.historic.length){
-        return 1 + state.historic[state.historic.length-1].id;
-      }else{
+    getLastHistoricId: (state) => {
+      if (state.historic.length) {
+        return 1 + state.historic[state.historic.length - 1].id;
+      } else {
         return 0;
       }
-    },    
+    },
 
 
   },
@@ -163,49 +408,6 @@ export default new Vuex.Store({
       }
       */
     },
-    ADD_RESTAURANT(state, payload) {
-      if (!state.restaurants.some(restaurant => restaurant.name === payload.name)) {
-        state.restaurants.push({
-          newRestaurantId: payload.newRestaurantId,
-          name: payload.name,
-          description: payload.description,
-          location: payload.location,
-          photo: payload.photo,
-          contacts: payload.contacts,
-          tags: payload.tags,
-
-        });
-        localStorage.setItem("restaurants", JSON.stringify(state.restaurants))
-      }
-    },
-    ADD_RESERVATION(state, payload) {
-      state.reservations.push({
-        reservationId: payload.reservationId,
-        userId: payload.userId,
-        restaurantName: payload.pickedRestaurantName,
-        dishName: payload.pickedDishName,
-        name: payload.name,        
-        reservationTime: payload.reservationTime,
-        reservationDate: payload.reservationDate,
-        observations: payload.observations,
-        numPeople: payload.numPeople
-      })
-
-      localStorage.setItem("reservations", JSON.stringify(state.reservations))
-    },
-    ADD_HISTORY(state,payload){
-      state.historic.push({
-        id: payload.id,
-        userId: payload.userId,
-        restaurantName: payload.pickedRestaurantName,
-        dishName: payload.pickedDishName,
-        reservationTime: payload.reservationTime,
-        reservationDate: payload.reservationDate,
-        numPeople: payload.numPeople
-      })
-      localStorage.setItem("historic", JSON.stringify(state.historic))
-      
-    },
 
 
     ADD_USER(state, payload) {
@@ -231,6 +433,70 @@ export default new Vuex.Store({
       } else {
         alert("E-MAIL JÁ REGISTADO");
       }
+    },
+
+
+    ADD_DISH(state, payload) {
+      if (!state.dishes.some(dish => dish.name === payload.name)) {
+        //adicionar novo prato ao array
+        
+        state.dishes.push({
+          id: payload.id,
+          name: payload.name,
+          info: payload.info,
+          tags: payload.tags,
+          photo: payload.photo,
+        });
+        localStorage.setItem("dishes", JSON.stringify(state.dishes))
+
+        alert("prato add")
+      }
+    },
+
+    ADD_RESTAURANT(state, payload) {
+      if (!state.restaurants.some(restaurant => restaurant.name === payload.name)) {
+        state.restaurants.push({
+          newRestaurantId: payload.newRestaurantId,
+          name: payload.name,
+          description: payload.description,
+          location: payload.location,
+          photo: payload.photo,
+          contacts: payload.contacts,
+          tags: payload.tags,
+
+        });
+        localStorage.setItem("restaurants", JSON.stringify(state.restaurants))
+      }
+    },
+
+    ADD_RESERVATION(state, payload) {
+      state.reservations.push({
+        reservationId: payload.reservationId,
+        userId: payload.userId,
+        restaurantName: payload.pickedRestaurantName,
+        dishName: payload.pickedDishName,
+        name: payload.name,
+        reservationTime: payload.reservationTime,
+        reservationDate: payload.reservationDate,
+        observations: payload.observations,
+        numPeople: payload.numPeople
+      })
+
+      localStorage.setItem("reservations", JSON.stringify(state.reservations))
+    },
+
+    ADD_HISTORY(state, payload) {
+      state.historic.push({
+        id: payload.id,
+        userId: payload.userId,
+        restaurantName: payload.pickedRestaurantName,
+        dishName: payload.pickedDishName,
+        reservationTime: payload.reservationTime,
+        reservationDate: payload.reservationDate,
+        numPeople: payload.numPeople
+      })
+      localStorage.setItem("historic", JSON.stringify(state.historic))
+
     },
 
     LOGIN(state, payload) {
