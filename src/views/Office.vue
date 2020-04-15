@@ -73,7 +73,7 @@
         >
       </template>
       <v-card>
-        <v-card-title style="font-family:lato; font-size: 18px" primary-title>
+        <v-card-title style="font-family:lato; font-size: 18px; margin-top: 60%" primary-title>
           Sair da zona de Administrador?
         </v-card-title>
         <v-divider></v-divider>

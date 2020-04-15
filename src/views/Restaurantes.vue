@@ -84,7 +84,7 @@
                 :key="restaurant.name"
               >
                 <v-card class="mx-auto ma-6" min-width="350" max-width="350">
-                  <v-img height="250" :src="restaurant.photo"></v-img>
+                  <v-img height="250" v-bind:src= restaurant.photo></v-img>
 
                   <v-card-title
                     style="font-family:lato; font-weight: 500; font-size: 18px; margin-left: 3%; padding-bottom: 0;"
