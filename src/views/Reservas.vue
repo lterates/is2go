@@ -190,13 +190,24 @@
           <v-card class="mb-12" flat height="260px">
             <v-row>
               <v-col>
-                <v-text-field 
+                <v-row class="pb-8"> 
+                  <v-text-field 
                   color="black" 
                   solo flat
                   label="Observações:" 
                   v-model="observations" 
                   placeholder="Observações relativas ao seu pedido de reserva">
-                </v-text-field>
+                  </v-text-field>
+                </v-row>
+                <v-row>
+                  <v-card class="ml-12" flat>
+                    <v-card-title>Método de Pagamento</v-card-title>
+                    <v-radio-group class="ml-6" v-model="paymentMethod">
+                      <v-radio prepend-icon="mdi-account" value="cash" color="yellow" label="Numerário"></v-radio>
+                      <v-radio value="card" color="yellow" append-icon="mdi-credit-card" label="Multibanco"></v-radio>
+                    </v-radio-group>
+                  </v-card>
+                </v-row>
               </v-col>
               <v-divider class="mx-4" vertical/>
               <v-col align="center">
@@ -313,7 +324,8 @@
         reservationTime: "",        
         reservationDate: "",
         observations: "",
-        numPeople: 1,     
+        numPeople: 1,  
+        paymentMethod: "",
 
         restaurants: this.$store.getters.getRestaurants,
         dishes: this.$store.getters.getDishes,
