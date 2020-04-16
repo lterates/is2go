@@ -479,7 +479,8 @@ export default new Vuex.Store({
         reservationTime: payload.reservationTime,
         reservationDate: payload.reservationDate,
         observations: payload.observations,
-        numPeople: payload.numPeople
+        numPeople: payload.numPeople,
+        paymentMethod: payload.paymentMethod
       })
 
       localStorage.setItem("reservations", JSON.stringify(state.reservations))
@@ -493,7 +494,8 @@ export default new Vuex.Store({
         dishName: payload.pickedDishName,
         reservationTime: payload.reservationTime,
         reservationDate: payload.reservationDate,
-        numPeople: payload.numPeople
+        numPeople: payload.numPeople,
+        paymentMethod: payload.paymentMethod
       })
       localStorage.setItem("historic", JSON.stringify(state.historic))
 

@@ -77,6 +77,9 @@
                 <v-card-title
                   style="font-family:lato; font-weight: 500; font-size: 18px; margin-left: 3%; padding-bottom: 0;">
                   Número de pessoas: {{ reservation.numPeople }}</v-card-title>
+                  <v-card-title
+                  style="font-family:lato; font-weight: 500; font-size: 18px; margin-left: 3%; padding-bottom: 0;">
+                  Método de Pagamento: {{ reservation.paymentMethod }}</v-card-title>
 
                 <v-divider class="mx-4"></v-divider>
 

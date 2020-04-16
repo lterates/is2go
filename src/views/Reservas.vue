@@ -203,8 +203,8 @@
                   <v-card class="ml-12" flat>
                     <v-card-title>Método de Pagamento</v-card-title>
                     <v-radio-group class="ml-6" v-model="paymentMethod">
-                      <v-radio prepend-icon="mdi-account" value="cash" color="yellow" label="Numerário"></v-radio>
-                      <v-radio value="card" color="yellow" append-icon="mdi-credit-card" label="Multibanco"></v-radio>
+                      <v-radio prepend-icon="mdi-account" value="Numerário" color="yellow" label="Numerário"></v-radio>
+                      <v-radio value="Multibanco" color="yellow" append-icon="mdi-credit-card" label="Multibanco"></v-radio>
                     </v-radio-group>
                   </v-card>
                 </v-row>
@@ -352,6 +352,7 @@
             reservationDate: this.reservationDate,
             observations: this.observations,
             numPeople: this.numPeople,
+            paymentMethod: this.paymentMethod
           }),
           this.$store.commit("ADD_HISTORY", {
             id: this.$store.getters.getLastHistoricId,
@@ -361,6 +362,7 @@
             reservationTime: this.reservationTime,
             reservationDate: this.reservationDate,
             numPeople: this.numPeople,
+            paymentMethod: this.paymentMethod
           });
           this.$router.replace("/");
           alert("Reserva feita!")
