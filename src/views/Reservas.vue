@@ -243,7 +243,7 @@
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 5 - CONCLUSÃO ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
         <v-stepper-content step="5" color="white">
-          <v-card class="mb-12" flat color="white" height="320px" style="font-family: lato;">
+          <v-card class="mb-2" flat color="white" height="320px" style="font-family: lato;">
               <v-row>
                 <v-col class="text-center">
                   <v-card-title style="text-decoration: underline #FFE138 1px">Restaurante escolhido:</v-card-title>
@@ -269,7 +269,7 @@
                 <v-divider vertical></v-divider>
                 <v-col class="text-center">
                   <v-card-title style="text-decoration: underline #FFE138 1px">Observações:</v-card-title>
-                  <v-card-subtitle class="ma-4">{{observations}}</v-card-subtitle>
+                  <v-card-subtitle class="ma-1">{{observations}}</v-card-subtitle>
                 </v-col>
                 <v-divider vertical></v-divider>
                 <v-col class="text-center">
@@ -298,6 +298,10 @@
               </v-card-actions>
             </v-card>
           </v-dialog>
+          <v-btn class="mb-2 ml-12" depressed style="font-weight: 500; font-family:lato" color="white">
+            Método de Pagamento: 
+            <v-icon v-if="paymentMethod==='Numerário'" large class="ml-4">mdi-cash</v-icon>
+            <v-icon v-else large class="ml-4">mdi-credit-card</v-icon></v-btn>
         </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
