@@ -306,16 +306,35 @@ export default new Vuex.Store({
       }
     },
     userInfo: state => state.users,
+    getLoggedUserLocation: (state) => {
+      return state.loggedUser[0].location
+    },
     getLoggedUserName: state => state.loggedUser.username,
     checkAdmin: state => state.loggedUser.admin,
     getLoggedUserId: state => state.loggedUser.id,
+    // #################  LOGGED USER #################
+  ADD_CURRENT_LOCATION(state,payload){
+    state.loggedUser[0].location = payload.location
+    sessionStorage.setItem("loggedUser",JSON.stringify(state.loggedUser))
+  },
 
     // ################# RESTAURANTES #################
-
     restaurantInfo: state => id => {
       return state.restaurants.find(restaurant => restaurant.id === id);
     },
 
+    getRestaurantsById: (state) => {
+      return state.restaurants.sort(function (a, b) {
+        const idA = a.id
+        const idB = b.id
+
+        if (idA > idB) return 1;
+        if (idB > idA) return -1;
+
+        return 0
+      })
+    },  
+    
     getRestaurants: state => state.restaurants,
     getLastRestaurantId: (state) => {
       if (state.restaurants.length) {
@@ -335,6 +354,25 @@ export default new Vuex.Store({
         return 0;
       }
     },
+    getRestaurantByAlphOrder: (state) => {
+      return state.restaurants.sort(function (a, b) {
+        if (a.name > b.name) return 1;
+        if (b.name > a.name) return -1;
+      })
+    },
+
+    getRestaurantsByDistance: (state) => {
+      return state.restaurants.sort(function (a, b) {
+        const distanceA = a.distance
+        const distanceB = b.distance
+
+        if (distanceA > distanceB) return 1;
+        if (distanceB > distanceA) return -1;
+
+        return 0
+      })
+    },
+    
 
 
   },
@@ -409,37 +447,11 @@ export default new Vuex.Store({
       */
     },
 
-
-    ADD_USER(state, payload) {
-      if (!state.users.some(user => user.email === payload.email)) {
-        if (!state.users.some(user => user.username === payload.username)) {
-
-          //adicionar novo user ao array
-          state.users.push({
-            id: payload.id,
-            username: payload.username,
-            password: payload.password,
-            email: payload.email,
-            admin: false
-          });
-
-          localStorage.setItem("users", JSON.stringify(state.users))
-
-          alert("Registado");
-
-        } else {
-          alert("Username Já Utilizado")
-        }
-      } else {
-        alert("E-MAIL JÁ REGISTADO");
-      }
-    },
-
-
+    //    #### DISHES ####
     ADD_DISH(state, payload) {
       if (!state.dishes.some(dish => dish.name === payload.name)) {
         //adicionar novo prato ao array
-        
+
         state.dishes.push({
           id: payload.id,
           name: payload.name,
@@ -452,7 +464,7 @@ export default new Vuex.Store({
         alert("prato add")
       }
     },
-
+    //    #### RESTAURANTS ####
     ADD_RESTAURANT(state, payload) {
       if (!state.restaurants.some(restaurant => restaurant.name === payload.name)) {
         state.restaurants.push({
@@ -500,6 +512,33 @@ export default new Vuex.Store({
       localStorage.setItem("historic", JSON.stringify(state.historic))
 
     },
+
+    // #### USERS ####
+    ADD_USER(state, payload) {
+      if (!state.users.some(user => user.email === payload.email)) {
+        if (!state.users.some(user => user.username === payload.username)) {
+
+          //adicionar novo user ao array
+          state.users.push({
+            id: payload.id,
+            username: payload.username,
+            password: payload.password,
+            email: payload.email,
+            admin: false
+          });
+
+          localStorage.setItem("users", JSON.stringify(state.users))
+
+          alert("Registado");
+
+        } else {
+          alert("Username Já Utilizado")
+        }
+      } else {
+        alert("E-MAIL JÁ REGISTADO");
+      }
+    },
+
 
     LOGIN(state, payload) {
 
